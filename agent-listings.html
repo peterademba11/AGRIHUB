@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Listings | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="agent-dashboard.html" class="logo">AgriHub <span class="badge badge-agent">Agent</span></a>
+            <div class="nav-links">
+                <a href="agent-marketplace.html">Marketplace</a>
+                <a href="agent-farmers.html">Farmers</a>
+                <a href="agent-buyers.html">Buyers</a>
+                <a href="agent-commissions.html">Commissions</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="Agent" class="user-avatar">
+                        <span class="user-name">Agent Kwame</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="agent-profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="agent-settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="Agent" class="user-avatar">
+                <div>
+                    <div class="user-name">Agent Kwame</div>
+                    <div class="user-role">Certified Agent</div>
+                    <div class="agent-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="agent-dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="agent-transactions.html">
+                <i class="fas fa-exchange-alt"></i> Transactions
+                <span class="badge">12</span>
+            </a>
+            <a href="agent-farmers.html">
+                <i class="fas fa-users"></i> My Farmers
+                <span class="badge">24</span>
+            </a>
+            <a href="agent-buyers.html">
+                <i class="fas fa-user-tie"></i> My Buyers
+            </a>
+            <a href="agent-listings.html" class="active">
+                <i class="fas fa-list"></i> My Listings
+            </a>
+            <a href="agent-commissions.html">
+                <i class="fas fa-money-bill-wave"></i> Commissions
+                <span class="badge">₵2,450</span>
+            </a>
+            <a href="agent-messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="agent-reports.html">
+                <i class="fas fa-chart-pie"></i> Reports
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="agent-performance">
+                <div class="performance-metric">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                <a href="agent-performance.html" class="btn btn-outline btn-sm">View Stats</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Listings</h1>
+                <div class="breadcrumb">
+                    <a href="agent-dashboard.html">Home</a> / <span>My Listings</span>
+                </div>
+                <div class="header-actions">
+                    <a href="agent-create-listing.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Create Listing
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Listing Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="search-bar">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search listings by product, farmer, or location...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="filter-group">
+                                <label>Filter by:</label>
+                                <select>
+                                    <option>All Listings</option>
+                                    <option>Active</option>
+                                    <option>Pending</option>
+                                    <option>Sold</option>
+                                    <option>Expired</option>
+                                </select>
+                                <select>
+                                    <option>All Products</option>
+                                    <option>Maize</option>
+                                    <option>Cassava</option>
+                                    <option>Tomatoes</option>
+                                    <option>Plantain</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listings Grid -->
+            <div class="listings-grid">
+                <!-- Listing Card 1 -->
+                <div class="listing-card">
+                    <div class="listing-badge active">Active</div>
+                    <div class="listing-image">
+                        <img src="assets/products/maize.jpg" alt="Maize">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Premium Maize (200kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Kofi Mensah</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kumasi, Ashanti</span>
+                        </div>
+                        <div class="listing-price">₵4,500</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Listed: 2 days ago</span>
+                            <span><i class="fas fa-eye"></i> 24 views</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-exchange-alt"></i> Sell
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listing Card 2 -->
+                <div class="listing-card">
+                    <div class="listing-badge active">Active</div>
+                    <div class="listing-image">
+                        <img src="images/tomatoes.jpg" alt="Tomatoes">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Fresh Tomatoes (50kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Ama Serwaa</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Ejisu, Ashanti</span>
+                        </div>
+                        <div class="listing-price">₵1,250</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Listed: 1 week ago</span>
+                            <span><i class="fas fa-eye"></i> 18 views</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-exchange-alt"></i> Sell
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listing Card 3 -->
+                <div class="listing-card">
+                    <div class="listing-badge pending">Pending</div>
+                    <div class="listing-image">
+                        <img src="images/yam.jpg" alt="Cassava">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Quality Cassava (300kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Yaw Boateng</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Sunyani, Bono</span>
+                        </div>
+                        <div class="listing-price">₵3,600</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Listed: 3 days ago</span>
+                            <span><i class="fas fa-eye"></i> 12 views</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-exchange-alt"></i> Sell
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listing Card 4 -->
+                <div class="listing-card">
+                    <div class="listing-badge sold">Sold</div>
+                    <div class="listing-image">
+                        <img src="images/maize.jpg" alt="Plantain">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Ripe Plantain (150kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Esi Nyamekye</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Techiman, Bono East</span>
+                        </div>
+                        <div class="listing-price">₵2,800</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Sold: 5 days ago</span>
+                            <span><i class="fas fa-check-circle"></i> To: Ghana Foods Ltd</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-redo"></i> Relist
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-file-alt"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listing Card 5 -->
+                <div class="listing-card">
+                    <div class="listing-badge expired">Expired</div>
+                    <div class="listing-image">
+                        <img src="images/yam.jpg" alt="Yam">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Fresh Yam (100kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Kwasi Amoako</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kintampo, Bono East</span>
+                        </div>
+                        <div class="listing-price">₵2,100</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Expired: 2 weeks ago</span>
+                            <span><i class="fas fa-eye"></i> 9 views</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-redo"></i> Renew
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listing Card 6 -->
+                <div class="listing-card">
+                    <div class="listing-badge active">Active</div>
+                    <div class="listing-image">
+                        <img src="images/pepper.jpg" alt="Peppers">
+                    </div>
+                    <div class="listing-content">
+                        <h3>Hot Peppers (30kg)</h3>
+                        <div class="listing-meta">
+                            <span><i class="fas fa-user"></i> Adwoa Safo</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Mampong, Ashanti</span>
+                        </div>
+                        <div class="listing-price">₵900</div>
+                        <div class="listing-details">
+                            <span><i class="fas fa-calendar"></i> Listed: 1 day ago</span>
+                            <span><i class="fas fa-eye"></i> 5 views</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-exchange-alt"></i> Sell
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="btn btn-outline" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="page-numbers">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </div>
+                <button class="btn btn-outline">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Listing Stats -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #e3f2fd;">
+                            <i class="fas fa-list" style="color: #2196f3;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Total Listings</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 3 new this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #e8f5e9;">
+                            <i class="fas fa-check-circle" style="color: #4caf50;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Active Listings</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 2 from last week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #fff8e1;">
+                            <i class="fas fa-money-bill-wave" style="color: #ffa000;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">₵15,200</div>
+                            <div class="stat-label">Total Value</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 18% from last month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #f3e5f5;">
+                            <i class="fas fa-percentage" style="color: #9c27b0;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">67%</div>
+                            <div class="stat-label">Conversion Rate</div>
+                            <div class="stat-change down">
+                                <i class="fas fa-arrow-down"></i> 5% from last month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Agri-Hub</h3>
+                    <p>Connecting farmers to markets through trusted agents.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Agent Resources</h3>
+                    <ul>
+                        <li><a href="agent-guide.html">Agent Guide</a></li>
+                        <li><a href="agent-training.html">Training Materials</a></li>
+                        <li><a href="agent-tools.html">Tools & Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Agent Support</a></li>
+                        <li><a href="#">Contact Supervisor</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i> Agent Group</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Agent Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Agri-Hub Agent Network. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

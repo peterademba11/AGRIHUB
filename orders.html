@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/peter.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/peter.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html" class="active">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Orders</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>Orders</span>
+                </div>
+            </div>
+            
+            <!-- Order Filters -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="order-filters">
+                        <div class="filter-group">
+                            <label>Status</label>
+                            <select class="form-control">
+                                <option>All Orders</option>
+                                <option>Pending</option>
+                                <option selected>Processing</option>
+                                <option>Shipped</option>
+                                <option>Delivered</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Date Range</label>
+                            <select class="form-control">
+                                <option>Last 7 Days</option>
+                                <option selected>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                                <option>Custom Range</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select class="form-control">
+                                <option>Newest First</option>
+                                <option>Oldest First</option>
+                                <option>Amount: Low to High</option>
+                                <option>Amount: High to Low</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <button class="btn btn-primary">Apply Filters</button>
+                            <button class="btn btn-outline">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Orders List -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Orders</h3>
+                    <div class="order-summary">
+                        <span>Total: ₵185,000</span>
+                        <span>Completed: 12</span>
+                        <span>Pending: 3</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-1001</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="images/man2.png" alt="Customer" class="customer-avatar">
+                                            <span>Kwame Asante</span>
+                                        </div>
+                                    </td>
+                                    <td>15 Jun 2023</td>
+                                    <td>₵45,000</td>
+                                    <td><span class="badge badge-success">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-1002</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="images/woman1.png" alt="Customer" class="customer-avatar">
+                                            <span>Ama Serwaa</span>
+                                        </div>
+                                    </td>
+                                    <td>12 Jun 2023</td>
+                                    <td>₵32,500</td>
+                                    <td><span class="badge badge-success">Delivered</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-1003</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="images/man1.png" alt="Customer" class="customer-avatar">
+                                            <span>Yaw Mensah</span>
+                                        </div>
+                                    </td>
+                                    <td>10 Jun 2023</td>
+                                    <td>₵28,750</td>
+                                    <td><span class="badge badge-warning">Processing</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-1004</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="images/man3.png" alt="Customer" class="customer-avatar">
+                                            <span>Esi Nyarko</span>
+                                        </div>
+                                    </td>
+                                    <td>08 Jun 2023</td>
+                                    <td>₵15,000</td>
+                                    <td><span class="badge badge-info">Shipped</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-1005</td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="images/man1.png" alt="Customer" class="customer-avatar">
+                                            <span>Kofi Boateng</span>
+                                        </div>
+                                    </td>
+                                    <td>05 Jun 2023</td>
+                                    <td>₵18,250</td>
+                                    <td><span class="badge badge-danger">Cancelled</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Statistics -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Order Status</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="orderStatusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Monthly Sales</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="monthlySalesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>

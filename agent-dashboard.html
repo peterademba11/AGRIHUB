@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Dashboard | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="agent-dashboard.html" class="logo">AgriHub <span class="badge badge-agent">Agent</span></a>
+            <div class="nav-links">
+                <a href="agent-marketplace.html">Marketplace</a>
+                <a href="agent-farmers.html">Farmers</a>
+                <a href="agent-buyers.html">Buyers</a>
+                <a href="agent-commissions.html">Commissions</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="Agent" class="user-avatar">
+                        <span class="user-name">Agent Kwame</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="agent-profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="agent-settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="Agent" class="user-avatar">
+                <div>
+                    <div class="user-name">Agent Kwame</div>
+                    <div class="user-role">Certified Agent</div>
+                    <div class="agent-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="agent-dashboard.html" class="active">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="agent-transactions.html">
+                <i class="fas fa-exchange-alt"></i> Transactions
+                <span class="badge">12</span>
+            </a>
+            <a href="agent-farmers.html">
+                <i class="fas fa-users"></i> My Farmers
+                <span class="badge">24</span>
+            </a>
+            <a href="agent-buyers.html">
+                <i class="fas fa-user-tie"></i> My Buyers
+            </a>
+            <a href="agent-listings.html">
+                <i class="fas fa-list"></i> My Listings
+            </a>
+            <a href="agent-commissions.html">
+                <i class="fas fa-money-bill-wave"></i> Commissions
+                <span class="badge">₵2,450</span>
+            </a>
+            <a href="agent-messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="agent-reports.html">
+                <i class="fas fa-chart-pie"></i> Reports
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="agent-performance">
+                <div class="performance-metric">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                <a href="agent-performance.html" class="btn btn-outline btn-sm">View Stats</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Agent Dashboard</h1>
+                <div class="breadcrumb">
+                    <a href="agent-dashboard.html">Home</a> / <span>Dashboard</span>
+                </div>
+                <div class="header-actions">
+                    <a href="agent-new-transaction.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Transaction
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Welcome Banner -->
+            <div class="welcome-banner agent-welcome">
+                <div class="welcome-content">
+                    <h2>Welcome, Agent Kwame!</h2>
+                    <p>You have <strong>3 pending transactions</strong> and <strong>₵2,450</strong> in available commissions. Get started by connecting farmers with buyers.</p>
+                    <div class="welcome-actions">
+                        <a href="agent-new-transaction.html" class="btn btn-light">Start New Transaction</a>
+                        <a href="agent-guide.html" class="btn btn-outline-light">Agent Guide</a>
+                    </div>
+                </div>
+                <div class="welcome-image">
+                    <img src="images/profile.png" alt="Agent Illustration">
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #e3f2fd;">
+                        <i class="fas fa-handshake" style="color: #2196f3;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">Completed Transactions</div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i> 20% from last month
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #e8f5e9;">
+                        <i class="fas fa-money-bill-wave" style="color: #4caf50;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">₵24,500</div>
+                        <div class="stat-label">Total Volume</div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i> 15% from last month
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #fff8e1;">
+                        <i class="fas fa-users" style="color: #ffa000;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Farmers Connected</div>
+                        <div class="stat-change up">
+                            <i class="fas fa-arrow-up"></i> 8 new this month
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #f3e5f5;">
+                        <i class="fas fa-percentage" style="color: #9c27b0;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">5.5%</div>
+                        <div class="stat-label">Commission Rate</div>
+                        <div class="stat-change">
+                            <i class="fas fa-equals"></i> Standard rate
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="row quick-actions">
+                <div class="col-md-3">
+                    <a href="agent-new-transaction.html" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>New Transaction</h3>
+                        <p>Connect a farmer with a buyer</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="agent-add-farmer.html" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Add Farmer</h3>
+                        <p>Register a new farmer</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="agent-add-buyer.html" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Add Buyer</h3>
+                        <p>Register a new buyer</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="agent-create-listing.html" class="quick-action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h3>Create Listing</h3>
+                        <p>List available produce</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pending Transactions -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Pending Transactions</h3>
+                    <a href="agent-transactions.html" class="btn btn-outline btn-sm">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Farmer</th>
+                                    <th>Buyer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TXN-10023</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/man.png" alt="Farmer" class="user-avatar">
+                                            <span>Kofi Mensah</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/boy.png" alt="Buyer" class="user-avatar">
+                                            <span>Ghana Foods Ltd</span>
+                                        </div>
+                                    </td>
+                                    <td>Maize (200kg)</td>
+                                    <td>₵4,500</td>
+                                    <td><span class="badge badge-warning">Negotiating</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">Continue</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10024</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/woman.png" alt="Farmer" class="user-avatar">
+                                            <span>Ama Serwaa</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/profile.png" alt="Buyer" class="user-avatar">
+                                            <span>Kumasi Market</span>
+                                        </div>
+                                    </td>
+                                    <td>Tomatoes (50kg)</td>
+                                    <td>₵1,250</td>
+                                    <td><span class="badge badge-info">Payment Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">Follow Up</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10025</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/user.png" alt="Farmer" class="user-avatar">
+                                            <span>Yaw Boateng</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="assets/buyers/buyer3.jpg" alt="Buyer" class="user-avatar">
+                                            <span>Accra Fresh</span>
+                                        </div>
+                                    </td>
+                                    <td>Cassava (300kg)</td>
+                                    <td>₵3,600</td>
+                                    <td><span class="badge badge-primary">Delivery Scheduled</span></td>
+                                    <td>
+                                        <button class="btn btn-outline btn-sm">Track</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Commissions -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Transaction Activity</h3>
+                            <select class="chart-period">
+                                <option>Last 7 Days</option>
+                                <option selected>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="transactionsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Commissions</h3>
+                            <a href="agent-commissions.html" class="btn btn-outline btn-sm">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="commissions-list">
+                                <div class="commission-item">
+                                    <div class="commission-icon">
+                                        <i class="fas fa-check-circle success"></i>
+                                    </div>
+                                    <div class="commission-content">
+                                        <h4>#TXN-10020</h4>
+                                        <p>Maize sale to Ghana Foods</p>
+                                        <div class="commission-meta">
+                                            <span>₵275</span>
+                                            <span>2 days ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="commission-item">
+                                    <div class="commission-icon">
+                                        <i class="fas fa-check-circle success"></i>
+                                    </div>
+                                    <div class="commission-content">
+                                        <h4>#TXN-10019</h4>
+                                        <p>Tomatoes to Kumasi Market</p>
+                                        <div class="commission-meta">
+                                            <span>₵150</span>
+                                            <span>1 week ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="commission-item">
+                                    <div class="commission-icon">
+                                        <i class="fas fa-clock warning"></i>
+                                    </div>
+                                    <div class="commission-content">
+                                        <h4>#TXN-10018</h4>
+                                        <p>Cassava to Accra Fresh</p>
+                                        <div class="commission-meta">
+                                            <span>₵320</span>
+                                            <span>Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Performance Metrics -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Your Performance</h3>
+                    <a href="agent-performance.html" class="btn btn-outline btn-sm">Detailed Report</a>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div class="metric-value">87%</div>
+                                <div class="metric-label">Success Rate</div>
+                                <div class="metric-change up">
+                                    <i class="fas fa-arrow-up"></i> 5% from last month
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div class="metric-value">4.8</div>
+                                <div class="metric-label">Average Rating</div>
+                                <div class="metric-change up">
+                                    <i class="fas fa-arrow-up"></i> 0.2 from last month
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div class="metric-value">3.2</div>
+                                <div class="metric-label">Avg. Days to Close</div>
+                                <div class="metric-change down">
+                                    <i class="fas fa-arrow-down"></i> 0.5 from last month
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <div class="metric-value">92%</div>
+                                <div class="metric-label">Repeat Business</div>
+                                <div class="metric-change">
+                                    <i class="fas fa-equals"></i> Steady
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Agri-Hub</h3>
+                    <p>Connecting farmers to markets through trusted agents.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Agent Resources</h3>
+                    <ul>
+                        <li><a href="agent-guide.html">Agent Guide</a></li>
+                        <li><a href="agent-training.html">Training Materials</a></li>
+                        <li><a href="agent-tools.html">Tools & Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Agent Support</a></li>
+                        <li><a href="#">Contact Supervisor</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i> Agent Group</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Agent Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Agri-Hub Agent Network. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/agent-dashboard.js"></script>
+</body>
+</html>

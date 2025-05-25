@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter Ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html" class="active">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Messages</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>Messages</span>
+                </div>
+            </div>
+            
+            <div class="messages-container">
+                <!-- Conversations List -->
+                <div class="conversations-list">
+                    <div class="conversation-search">
+                        <input type="text" placeholder="Search conversations...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="conversation-item active">
+                        <div class="conversation-avatar">
+                            <img src="images/profile.png" alt="Kwame Asante">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Kwame Asante</h4>
+                                <span class="conversation-time">10:30 AM</span>
+                            </div>
+                            <p class="conversation-preview">Hello, I'm interested in your maize...</p>
+                            <span class="unread-count">3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="conversation-avatar">
+                            <img src="images/woman.png" alt="Ama Wendy">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Ama Wendy</h4>
+                                <span class="conversation-time">Yesterday</span>
+                            </div>
+                            <p class="conversation-preview">Thanks for the tomatoes, they were...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="conversation-avatar">
+                            <img src="images/man.png" alt="Yaw Mensah">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Yaw Mensah</h4>
+                                <span class="conversation-time">2 days ago</span>
+                            </div>
+                            <p class="conversation-preview">Can we negotiate the price for the...</p>
+                            <span class="unread-count">1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="conversation-avatar">
+                            <img src="images/woman.png" alt="Esi Nyarko">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Esi Nyarko</h4>
+                                <span class="conversation-time">1 week ago</span>
+                            </div>
+                            <p class="conversation-preview">When will you have more cassava...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="conversation-item">
+                        <div class="conversation-avatar">
+                            <img src="images/boy.png" alt="Dr. Osei">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Dr. Osei (Expert)</h4>
+                                <span class="conversation-time">2 weeks ago</span>
+                            </div>
+                            <p class="conversation-preview">Regarding your cassava disease...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conversation Detail -->
+                <div class="conversation-detail">
+                    <div class="conversation-header">
+                        <div class="recipient-info">
+                            <img src="images/profile.png" alt="Kwame Asante">
+                            <div>
+                                <h3>Kwame Asante</h3>
+                                <p class="recipient-status">Online</p>
+                            </div>
+                        </div>
+                        <div class="conversation-actions">
+                            <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                            <button class="btn-icon"><i class="fas fa-video"></i></button>
+                            <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="messages-container">
+                        <div class="message-date">Today</div>
+                        
+                        <div class="message received">
+                            <div class="message-content">
+                                <p>Hello, I'm interested in your maize. Is it still available?</p>
+                                <span class="message-time">10:30 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message sent">
+                            <div class="message-content">
+                                <p>Yes, we have about 500kg available. How much do you need?</p>
+                                <span class="message-time">10:32 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message received">
+                            <div class="message-content">
+                                <p>I need about 200kg. What's your best price?</p>
+                                <span class="message-time">10:33 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message received">
+                            <div class="message-content">
+                                <p>Also, can you deliver to Kumasi?</p>
+                                <span class="message-time">10:34 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-composer">
+                        <div class="composer-tools">
+                            <button class="btn-icon"><i class="fas fa-paperclip"></i></button>
+                            <button class="btn-icon"><i class="fas fa-image"></i></button>
+                        </div>
+                        <input type="text" placeholder="Type your message...">
+                        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/messages.js"></script>
+</body>
+</html>

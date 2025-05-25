@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions | Agri-Hub Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as dashboard) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="agent-dashboard.html" class="logo">AgriHub <span class="badge badge-agent">Agent</span></a>
+            <div class="nav-links">
+                <a href="agent-marketplace.html">Marketplace</a>
+                <a href="agent-farmers.html">Farmers</a>
+                <a href="agent-buyers.html">Buyers</a>
+                <a href="agent-commissions.html">Commissions</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="Agent" class="user-avatar">
+                        <span class="user-name">Agent Kwame</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="agent-profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="agent-settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="Agent" class="user-avatar">
+                <div>
+                    <div class="user-name">Agent Kwame</div>
+                    <div class="user-role">Certified Agent</div>
+                    <div class="agent-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="agent-dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="agent-transactions.html" class="active">
+                <i class="fas fa-exchange-alt"></i> Transactions
+                <span class="badge">12</span>
+            </a>
+            <a href="agent-farmers.html">
+                <i class="fas fa-users"></i> My Farmers
+                <span class="badge">24</span>
+            </a>
+            <a href="agent-buyers.html">
+                <i class="fas fa-user-tie"></i> My Buyers
+            </a>
+            <a href="agent-listings.html">
+                <i class="fas fa-list"></i> My Listings
+            </a>
+            <a href="agent-commissions.html">
+                <i class="fas fa-money-bill-wave"></i> Commissions
+                <span class="badge">₵2,450</span>
+            </a>
+            <a href="agent-messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="agent-reports.html">
+                <i class="fas fa-chart-pie"></i> Reports
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="agent-performance">
+                <div class="performance-metric">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                <a href="agent-performance.html" class="btn btn-outline btn-sm">View Stats</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Transactions</h1>
+                <div class="breadcrumb">
+                    <a href="agent-dashboard.html">Home</a> / <span>Transactions</span>
+                </div>
+                <div class="header-actions">
+                    <a href="agent-new-transaction.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Transaction
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Transaction Filters -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="transaction-filters">
+                        <div class="filter-group">
+                            <label>Status</label>
+                            <select class="form-control">
+                                <option>All Transactions</option>
+                                <option>Pending</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Date Range</label>
+                            <select class="form-control">
+                                <option>Last 7 Days</option>
+                                <option selected>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                                <option>Custom Range</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Product</label>
+                            <select class="form-control">
+                                <option>All Products</option>
+                                <option>Maize</option>
+                                <option>Cassava</option>
+                                <option>Tomatoes</option>
+                                <option>Peppers</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <button class="btn btn-primary">Apply Filters</button>
+                            <button class="btn btn-outline">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transactions List -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>All Transactions</h3>
+                    <div class="transaction-summary">
+                        <span>Total: ₵24,500</span>
+                        <span>Completed: 12</span>
+                        <span>Pending: 3</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Farmer</th>
+                                    <th>Buyer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Commission</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TXN-10023</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/man1.png" alt="Farmer" class="user-avatar">
+                                            <span>Kofi Mensah</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/man2.png" alt="Buyer" class="user-avatar">
+                                            <span>Ghana Foods Ltd</span>
+                                        </div>
+                                    </td>
+                                    <td>Maize (200kg)</td>
+                                    <td>₵4,500</td>
+                                    <td>₵275</td>
+                                    <td>15 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10022</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/woman1.png" alt="Farmer" class="user-avatar">
+                                            <span>Ama Serwaa</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="assets/buyers/buyer2.jpg" alt="Buyer" class="user-avatar">
+                                            <span>Kumasi Market</span>
+                                        </div>
+                                    </td>
+                                    <td>Tomatoes (50kg)</td>
+                                    <td>₵1,250</td>
+                                    <td>₵75</td>
+                                    <td>12 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10021</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/man3.png" alt="Farmer" class="user-avatar">
+                                            <span>Yaw Boateng</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="assets/buyers/buyer3.jpg" alt="Buyer" class="user-avatar">
+                                            <span>Accra Fresh</span>
+                                        </div>
+                                    </td>
+                                    <td>Cassava (300kg)</td>
+                                    <td>₵3,600</td>
+                                    <td>₵220</td>
+                                    <td>10 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10020</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/profile.png" alt="Farmer" class="user-avatar">
+                                            <span>Esi Nyarko</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/user.png" alt="Buyer" class="user-avatar">
+                                            <span>Tamale Foods</span>
+                                        </div>
+                                    </td>
+                                    <td>Peppers (30kg)</td>
+                                    <td>₵900</td>
+                                    <td>₵55</td>
+                                    <td>08 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10019</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/woman.png" alt="Farmer" class="user-avatar">
+                                            <span>Kwame Asante</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/user.png" alt="Buyer" class="user-avatar">
+                                            <span>Ghana Foods Ltd</span>
+                                        </div>
+                                    </td>
+                                    <td>Maize (150kg)</td>
+                                    <td>₵3,375</td>
+                                    <td>₵200</td>
+                                    <td>05 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#TXN-10018</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/woman.png" alt="Farmer" class="user-avatar">
+                                            <span>Kofi Mensah</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/boy.png" alt="Buyer" class="user-avatar">
+                                            <span>Accra Fresh</span>
+                                        </div>
+                                    </td>
+                                    <td>Cassava (250kg)</td>
+                                    <td>₵3,000</td>
+                                    <td>₵180</td>
+                                    <td>02 Jun 2023</td>
+                                    <td><span class="badge badge-success">Completed</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-print"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled>
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <span class="page-numbers">Page 1 of 3</span>
+                        <button class="btn btn-outline">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/agent-transactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter Ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html" class="active">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Notifications</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>Notifications</span>
+                </div>
+                <button class="btn btn-outline btn-sm" id="mark-all-read">Mark All as Read</button>
+            </div>
+            
+            <!-- Notifications Tabs -->
+            <div class="notifications-tabs">
+                <button class="tab-btn active" data-tab="all">All</button>
+                <button class="tab-btn" data-tab="orders">Orders</button>
+                <button class="tab-btn" data-tab="messages">Messages</button>
+                <button class="tab-btn" data-tab="system">System</button>
+            </div>
+            
+            <!-- Notifications List -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="notifications-list">
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="fas fa-shopping-cart success"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>New Order Received</h4>
+                                <p>Kwame Asante placed an order for 200kg of maize</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">10 minutes ago</span>
+                                    <a href="orders.html" class="notification-link">View Order</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                        
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="fas fa-comment-alt info"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>New Message</h4>
+                                <p>You have a new message from Ama Wendy about your tomato listing</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">2 hours ago</span>
+                                    <a href="messages.html" class="notification-link">View Message</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-exclamation-triangle warning"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Crop Alert</h4>
+                                <p>Potential disease detected in your cassava field from last scan</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">1 day ago</span>
+                                    <a href="crop-scanner.html" class="notification-link">View Details</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-tractor primary"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Machinery Booking Confirmed</h4>
+                                <p>Your tractor rental for Friday has been confirmed</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">2 days ago</span>
+                                    <a href="machinery.html" class="notification-link">View Booking</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Weather Advisory</h4>
+                                <p>Heavy rains expected in your area tomorrow. Consider delaying harvest.</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">3 days ago</span>
+                                    <a href="weather.html" class="notification-link">View Forecast</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Expert Response</h4>
+                                <p>Dr. Osei has responded to your question about cassava diseases</p>
+                                <div class="notification-meta">
+                                    <span class="notification-time">1 week ago</span>
+                                    <a href="messages.html" class="notification-link">View Response</a>
+                                </div>
+                            </div>
+                            <button class="btn-icon mark-as-read"><i class="fas fa-circle"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="load-more">
+                        <button class="btn btn-outline">Load More Notifications</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification Settings -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Notification Settings</h3>
+                </div>
+                <div class="card-body">
+                    <form class="notification-settings">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Email Notifications</span>
+                            </label>
+                            <p class="form-hint">Receive important notifications via email</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                <span>Push Notifications</span>
+                            </label>
+                            <p class="form-hint">Get instant alerts on your device</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox">
+                                <span>SMS Notifications</span>
+                            </label>
+                            <p class="form-hint">Receive text messages for critical alerts</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Notification Frequency</label>
+                            <select class="form-control">
+                                <option>Immediately</option>
+                                <option selected>Daily Digest</option>
+                                <option>Weekly Summary</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>

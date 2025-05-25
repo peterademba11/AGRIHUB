@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinery Rental | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html" class="active">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-top">Login</a>
+                    <a href="register.html" class="btn btn-top">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
+        <h1>Machinery Rental</h1>
+        <p>Rent farm equipment when you need it, without the high costs of ownership</p>
+        
+        <div class="machinery-tabs">
+            <button class="tab-btn active" data-tab="browse-machinery">Browse Machinery</button>
+            <button class="tab-btn" data-tab="my-rentals">My Rentals</button>
+            <button class="tab-btn" data-tab="list-machinery">List Your Machinery</button>
+        </div>
+        
+        <div class="tab-content active" id="browse-machinery">
+            <div class="machinery-filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="machinery-search" placeholder="Search machinery...">
+                </div>
+                <div class="filter-group">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="tractor">Tractors</option>
+                        <option value="harvester">Harvesters</option>
+                        <option value="planter">Planters</option>
+                        <option value="irrigation">Irrigation</option>
+                        <option value="other">Other Equipment</option>
+                    </select>
+                    <select id="location-filter">
+                        <option value="">All Locations</option>
+                        <option value="north">Northern Region</option>
+                        <option value="south">Southern Region</option>
+                        <option value="east">Eastern Region</option>
+                        <option value="west">Western Region</option>
+                    </select>
+                    <button class="btn btn-outline" id="reset-filters">Reset</button>
+                </div>
+            </div>
+            
+            <div class="machinery-grid" id="machinery-container">
+                <!-- Machinery will be loaded here via JavaScript -->
+            </div>
+        </div>
+        
+        <div class="tab-content" id="my-rentals">
+            <div class="empty-state">
+                <i class="fas fa-tractor"></i>
+                <h3>No Active Rentals</h3>
+                <p>You haven't rented any machinery yet. Browse our selection to find the equipment you need.</p>
+                <button class="btn btn-primary" data-tab="browse-machinery">Browse Machinery</button>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="list-machinery">
+            <div class="list-form">
+                <h3>List Your Machinery for Rent</h3>
+                <form id="machinery-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="machine-name">Equipment Name</label>
+                            <input type="text" id="machine-name" placeholder="e.g. John Deere Tractor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="machine-category">Category</label>
+                            <select id="machine-category" required>
+                                <option value="">Select a category</option>
+                                <option value="tractor">Tractor</option>
+                                <option value="harvester">Harvester</option>
+                                <option value="planter">Planter</option>
+                                <option value="irrigation">Irrigation Equipment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="machine-price">Daily Rate (₵)</label>
+                            <input type="number" id="machine-price" placeholder="e.g. 15000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="machine-location">Location</label>
+                            <select id="machine-location" required>
+                                <option value="">Select location</option>
+                                <option value="north">Northern Region</option>
+                                <option value="south">Volta Region</option>
+                                <option value="east">Eastern Region</option>
+                                <option value="west">Western Region</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="machine-description">Description</label>
+                        <textarea id="machine-description" rows="4" placeholder="Describe the equipment, including model, year, and any special features..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="machine-images">Upload Photos (Max 5)</label>
+                        <input type="file" id="machine-images" multiple accept="image/*">
+                        <div class="image-preview" id="image-preview"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">List Equipment</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Machinery Modal -->
+        <div id="machinery-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body" id="machinery-modal-body">
+                    <!-- Machinery details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/machinery.js"></script>
+</body>
+</html>

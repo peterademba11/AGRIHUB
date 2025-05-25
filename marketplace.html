@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="marketplace.html" class="active">Marketplace</a>
+                <a href="agri.html">Home</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-top">Login</a>
+                    <a href="register.html" class="btn btn-top">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
+        <h1>Marketplace</h1>
+        <p>Buy and sell farm produce directly with no middlemen</p>
+        
+        <div class="marketplace-toolbar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search products...">
+            </div>
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="grains">Grains</option>
+                    <option value="livestock">Livestock</option>
+                </select>
+                <select id="location-filter">
+                    <option value="">All Locations</option>
+                    <option value="north">Northern Region</option>
+                    <option value="south">Greater Accra Regioin</option>
+                    <option value="east">Eastern Region</option>
+                    <option value="west">Western Region</option>
+                </select>
+                <button class="btn btn-outline" id="reset-filters">Reset</button>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="products-container">
+            <!-- Products will be loaded here via JavaScript -->
+        </div>
+        
+        <!-- Product Modal -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body" id="modal-body">
+                    <!-- Product details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/marketplace.js"></script>
+</body>
+</html>

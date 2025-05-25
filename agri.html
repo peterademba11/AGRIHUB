@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriHub | Connecting Farmers to Markets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">CropScanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-top">Login</a>
+                    <a href="register.html" class="btn btn-top">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Connecting Farmers to Markets and Knowledge</h1>
+            <p>Agri-Hub: Your complete digital farming solution</p>
+            <div class="cta-buttons">
+                <a href="register.html?role=farmer" class="btn btn-primary btn-large">I'm a Farmer</a>
+                <a href="register.html?role=buyer" class="btn btn-primary btn-large">I'm a Buyer</a>
+                <a href="login.html" class="btn btn-outline btn-large">Agent Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shopping-basket"></i>
+                    <h3>Digital Marketplace</h3>
+                    <p>Sell your farm produce directly to buyers without middlemen</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Crop Health Scanner</h3>
+                    <p>AI-powered disease detection for your crops</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Weather Advisory</h3>
+                    <p>Personalized farming recommendations based on weather</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Expert Assistance</h3>
+                    <p>Connect with agricultural experts for advice</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Machinery Rental</h3>
+                    <p>Access farm equipment when you need it</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Market Prices</h3>
+                    <p>Real-time prices for all farm produce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Prices Section -->
+    <section class="market-prices">
+        <div class="container">
+            <h2>Today's Market Prices</h2>
+            <div class="prices-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Commodity</th>
+                            <th>Unit</th>
+                            <th>Price (₵)</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prices-data">
+                        <!-- Prices will be loaded via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-----Portfolio section-----------------
+
+    <section id="portfolio" class="portfolio">
+        <div class="main-text">
+            <span>My Work</span>
+            <h2>Latest Projects</h2>
+        </div>
+        <div class="container">
+            <div class="fillter-buttons">
+                <button class="btn" data-filter="all">All</button>
+                <button class="btn" data-filter=".product">Product</button>
+                <button class="btn" data-filter=".inter">Interacting</button>
+                <button class="btn" data-filter=".web">Web App</button>
+            </div>
+            <div class="portfolio-gallery">
+                <div class="port-box mix all product">
+                    <div class="port-image">
+                        <img src="images/img/boycode.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Programming</h3>
+                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="port-box mix all product">
+                    <div class="port-image">
+                        <img src="images/img/handcode.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Programming</h3>
+                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="port-box mix inter">
+                    <div class="port-image">
+                        <img src="images/img/lapee.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Programming</h3>
+                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="port-box mix web">
+                    <div class="port-image">
+                        <img src="images/img/repair.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Programming</h3>
+                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
+                        <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-------->
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Farmers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p>"Agri-Hub helped me sell my maize at better prices than local markets."</p>
+                    <div class="author">- Rockson Adongo</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The crop scanner identified my cassava disease and saved my harvest."</p>
+                    <div class="author">- Joyce A. Armah</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Getting expert advice through the platform improved my yields."</p>
+                    <div class="author">- Evans Hockey</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/mixitup.min.js"></script>
+</body>
+</html>

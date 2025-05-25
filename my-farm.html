@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Farm | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter Ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html" class="active">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Farm</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>My Farm</span>
+                </div>
+            </div>
+            
+            <!-- Farm Overview -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Farm Overview</h3>
+                    <a href="add-farm.html" class="btn btn-primary btn-sm">Add Farm</a>
+                </div>
+                <div class="card-body">
+                    <div class="farm-grid">
+                        <div class="farm-card">
+                            <div class="farm-map" id="farm-map-1"></div>
+                            <div class="farm-info">
+                                <h4>Main Farm</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Kumasi, Ashanti Region</p>
+                                <p><i class="fas fa-ruler-combined"></i> 5.2 acres</p>
+                                <p><i class="fas fa-seedling"></i> Maize, Cassava</p>
+                            </div>
+                            <div class="farm-actions">
+                                <a href="farm-details.html?id=1" class="btn btn-outline btn-sm">View Details</a>
+                            </div>
+                        </div>
+                        
+                        <div class="farm-card">
+                            <div class="farm-map" id="farm-map-2"></div>
+                            <div class="farm-info">
+                                <h4>Vegetable Plot</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Accra, Greater Accra</p>
+                                <p><i class="fas fa-ruler-combined"></i> 1.5 acres</p>
+                                <p><i class="fas fa-seedling"></i> Tomatoes, Peppers</p>
+                            </div>
+                            <div class="farm-actions">
+                                <a href="farm-details.html?id=2" class="btn btn-outline btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Crop Rotation Schedule -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Crop Rotation Schedule</h3>
+                    <a href="add-crop-rotation.html" class="btn btn-primary btn-sm">Add Schedule</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Plot</th>
+                                    <th>Current Crop</th>
+                                    <th>Planted On</th>
+                                    <th>Next Crop</th>
+                                    <th>Rotation Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Plot A</td>
+                                    <td>Maize</td>
+                                    <td>15 Mar 2023</td>
+                                    <td>Beans</td>
+                                    <td>15 Sep 2023</td>
+                                    <td><span class="badge badge-success">Growing</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Plot B</td>
+                                    <td>Cassava</td>
+                                    <td>10 Feb 2023</td>
+                                    <td>Groundnut</td>
+                                    <td>10 Feb 2024</td>
+                                    <td><span class="badge badge-success">Growing</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Plot C</td>
+                                    <td>Tomatoes</td>
+                                    <td>20 Apr 2023</td>
+                                    <td>Peppers</td>
+                                    <td>20 Jul 2023</td>
+                                    <td><span class="badge badge-warning">Almost Ready</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Farm Tasks -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Upcoming Tasks</h3>
+                            <a href="add-task.html" class="btn btn-primary btn-sm">Add Task</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="task-list">
+                                <div class="task-item">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task1">
+                                    </div>
+                                    <div class="task-content">
+                                        <label for="task1">Apply fertilizer to maize field</label>
+                                        <div class="task-meta">
+                                            <span><i class="fas fa-calendar"></i> Due: Tomorrow</span>
+                                            <span><i class="fas fa-tractor"></i> Main Farm</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task2">
+                                    </div>
+                                    <div class="task-content">
+                                        <label for="task2">Irrigate vegetable plot</label>
+                                        <div class="task-meta">
+                                            <span><i class="fas fa-calendar"></i> Due: In 2 days</span>
+                                            <span><i class="fas fa-tractor"></i> Vegetable Plot</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                </div>
+                                
+                                <div class="task-item">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task3">
+                                    </div>
+                                    <div class="task-content">
+                                        <label for="task3">Harvest tomatoes</label>
+                                        <div class="task-meta">
+                                            <span><i class="fas fa-calendar"></i> Due: In 1 week</span>
+                                            <span><i class="fas fa-tractor"></i> Vegetable Plot</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Crop Scans</h3>
+                            <a href="crop-scanner.html" class="btn btn-primary btn-sm">New Scan</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="scan-list">
+                                <div class="scan-item">
+                                    <div class="scan-icon">
+                                        <i class="fas fa-check-circle success"></i>
+                                    </div>
+                                    <div class="scan-content">
+                                        <h4>Maize Field</h4>
+                                        <p>No diseases detected</p>
+                                        <div class="scan-meta">
+                                            <span><i class="fas fa-calendar"></i> 2 days ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="scan-item">
+                                    <div class="scan-icon">
+                                        <i class="fas fa-exclamation-triangle warning"></i>
+                                    </div>
+                                    <div class="scan-content">
+                                        <h4>Tomatoes</h4>
+                                        <p>Possible blight detected</p>
+                                        <div class="scan-meta">
+                                            <span><i class="fas fa-calendar"></i> 1 week ago</span>
+                                            <a href="#">View treatment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="scan-item">
+                                    <div class="scan-icon">
+                                        <i class="fas fa-check-circle success"></i>
+                                    </div>
+                                    <div class="scan-content">
+                                        <h4>Cassava</h4>
+                                        <p>Healthy growth</p>
+                                        <div class="scan-meta">
+                                            <span><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/my-farm.js"></script>
+</body>
+</html>

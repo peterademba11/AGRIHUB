@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-top">Login</a>
+                    <a href="register.html" class="btn btn-top">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
+        <h1>Subscription Plans</h1>
+        <p>Choose the plan that works best for your farming needs</p>
+        
+        <div class="subscription-tabs">
+            <button class="tab-btn active" data-tab="plans">Plans</button>
+            <button class="tab-btn" data-tab="my-subscription">My Subscription</button>
+        </div>
+        
+        <div class="tab-content active" id="plans">
+            <div class="plans-container">
+                <div class="plan-card free">
+                    <div class="plan-header">
+                        <h3>Free</h3>
+                        <div class="price">₵0<span>/month</span></div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Basic marketplace access</li>
+                            <li><i class="fas fa-check"></i> 5 crop scans per month</li>
+                            <li><i class="fas fa-check"></i> Basic weather forecasts</li>
+                            <li><i class="fas fa-check"></i> Community support</li>
+                            <li><i class="fas fa-times"></i> Expert consultations</li>
+                            <li><i class="fas fa-times"></i> Advanced analytics</li>
+                            <li><i class="fas fa-times"></i> Priority customer support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-footer">
+                        <button class="btn btn-outline current-plan">Current Plan</button>
+                    </div>
+                </div>
+                
+                <div class="plan-card premium">
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="price">₵5,000<span>/month</span></div>
+                        <div class="popular-badge">Most Popular</div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Full marketplace access</li>
+                            <li><i class="fas fa-check"></i> Unlimited crop scans</li>
+                            <li><i class="fas fa-check"></i> Detailed weather forecasts</li>
+                            <li><i class="fas fa-check"></i> 2 expert consultations/month</li>
+                            <li><i class="fas fa-check"></i> Basic analytics</li>
+                            <li><i class="fas fa-check"></i> Standard customer support</li>
+                            <li><i class="fas fa-times"></i> Advanced market insights</li>
+                        </ul>
+                    </div>
+                    <div class="plan-footer">
+                        <button class="btn btn-primary upgrade-btn">Upgrade to Premium</button>
+                    </div>
+                </div>
+                
+                <div class="plan-card enterprise">
+                    <div class="plan-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">₵15,000<span>/month</span></div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Full marketplace access</li>
+                            <li><i class="fas fa-check"></i> Unlimited crop scans</li>
+                            <li><i class="fas fa-check"></i> Advanced weather analytics</li>
+                            <li><i class="fas fa-check"></i> 5 expert consultations/month</li>
+                            <li><i class="fas fa-check"></i> Advanced analytics</li>
+                            <li><i class="fas fa-check"></i> Priority customer support</li>
+                            <li><i class="fas fa-check"></i> Advanced market insights</li>
+                        </ul>
+                    </div>
+                    <div class="plan-footer">
+                        <button class="btn btn-primary upgrade-btn">Upgrade to Enterprise</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="plan-comparison">
+                <h3>Plan Comparison</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Premium</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marketplace Access</td>
+                            <td>Basic</td>
+                            <td>Full</td>
+                            <td>Full</td>
+                        </tr>
+                        <tr>
+                            <td>Crop Scans</td>
+                            <td>5/month</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Weather Forecasts</td>
+                            <td>Basic</td>
+                            <td>Detailed</td>
+                            <td>Advanced Analytics</td>
+                        </tr>
+                        <tr>
+                            <td>Expert Consultations</td>
+                            <td>0</td>
+                            <td>2/month</td>
+                            <td>5/month</td>
+                        </tr>
+                        <tr>
+                            <td>Farm Analytics</td>
+                            <td>None</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>Customer Support</td>
+                            <td>Community</td>
+                            <td>Standard</td>
+                            <td>Priority</td>
+                        </tr>
+                        <tr>
+                            <td>Market Insights</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>Advanced</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="my-subscription">
+            <div class="subscription-details">
+                <div class="current-plan-card">
+                    <h3>Your Current Plan</h3>
+                    <div class="plan-info">
+                        <div class="plan-name">Free Plan</div>
+                        <div class="plan-status active">Active</div>
+                    </div>
+                    <div class="plan-expiry">
+                        <i class="fas fa-calendar-alt"></i> No expiry date
+                    </div>
+                    <div class="plan-actions">
+                        <button class="btn btn-outline" data-tab="plans">Upgrade Plan</button>
+                    </div>
+                </div>
+                
+                <div class="billing-history">
+                    <h3>Billing History</h3>
+                    <div class="empty-state">
+                        <i class="fas fa-receipt"></i>
+                        <h4>No Billing History</h4>
+                        <p>You haven't made any payments yet. Your billing history will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Modal -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body" id="payment-modal-body">
+                    <h2>Upgrade to <span id="plan-name">Premium</span></h2>
+                    <div class="plan-price" id="plan-price"> ₵50/month</div>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option active">
+                            <input type="radio" name="payment-option" id="monthly" checked>
+                            <label for="monthly">
+                                <span class="option-title">Monthly</span>
+                                <span class="option-price" id="monthly-price"> ₵50/month</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" name="payment-option" id="annual">
+                            <label for="annual">
+                                <span class="option-title">Annual (Save 20%)</span>
+                                <span class="option-price" id="annual-price">576/year</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="methods">
+                            <div class="method active">
+                                <input type="radio" name="payment-method" id="card" checked>
+                                <label for="card">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    Credit/Debit Card
+                                </label>
+                            </div>
+                            <div class="method">
+                                <input type="radio" name="payment-method" id="bank">
+                                <label for="bank">
+                                    <i class="fas fa-university"></i>
+                                    Bank Transfer
+                                </label>
+                            </div>
+                            <div class="method">
+                                <input type="radio" name="payment-method" id="mobile">
+                                <label for="mobile">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    Mobile Money
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-details" id="card-details">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Expiry Date</label>
+                                <input type="text" id="card-expiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" placeholder="John Doe">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="confirm-payment">
+                        <i class="fas fa-lock"></i> Confirm Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/subscriptions.js"></script>
+</body>
+</html>

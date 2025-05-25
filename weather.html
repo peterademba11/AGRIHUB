@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Advisory | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Weather Advisory Styles */
+.weather-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.location-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.location-selector select {
+    flex-grow: 1;
+    max-width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#weather-results {
+    display: none;
+}
+
+.weather-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.weather-header {
+    margin-bottom: 20px;
+}
+
+.weather-header h2 {
+    margin-bottom: 5px;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.weather-icon i {
+    font-size: 4rem;
+    color: var(--warning-color);
+}
+
+.weather-temp {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.temp-unit {
+    font-size: 1.5rem;
+    vertical-align: super;
+}
+
+.weather-desc {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+}
+
+.detail i {
+    color: var(--info-color);
+    font-size: 1.2rem;
+}
+
+.forecast-container {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.forecast-container h3 {
+    margin-bottom: 20px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.forecast-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.forecast-day {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.forecast-icon i {
+    font-size: 1.5rem;
+    color: var(--warning-color);
+    margin-bottom: 10px;
+}
+
+.forecast-temp {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.min-temp {
+    color: #666;
+}
+
+.forecast-rain {
+    color: var(--info-color);
+    font-size: 0.9rem;
+}
+
+.recommendations {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.recommendations h3 {
+    margin-bottom: 20px;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.recommendation-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.recommendation-item i {
+    color: var(--primary)
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html" class="active">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-top">Login</a>
+                    <a href="register.html" class="btn btn-top">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
+        <h1>Weather Advisory</h1>
+        <p>Get personalized farming recommendations based on weather forecasts</p>
+        
+        <div class="weather-container">
+            <div class="location-selector">
+                <select id="location-select">
+                    <option value="">Select your location</option>
+                    <option value="Greater Accra">Greater Accra</option>
+                    <option value="Upper East Region">Upper East Region</option>
+                    <option value="Northern Region">Northern Region</option>
+                    <option value="Upper West Region">Upper West Region</option>
+                    <option value="North East Region">North East Region</option>
+                    <option value="Ashanti Region">Ashanti Region</option>
+                    <option value="Volta Region">Volta Region</option>
+                    <option value="Ahafo Region">Ahafo Region</option>
+                    <option value="Oti Region">Oti Region</option>
+                    <option value="Savannah Region">Savannah Region</option>
+                    <option value="Bono East Region">Bono East Region</option>
+                    <option value="Western Region">Western Region</option>
+                    <option value="Western North Region">Western North Region</option>
+                    <option value="Central Region">Central Region</option>
+                    <option value="Eastern Region">Eastern Region</option>
+                    <option value="Brong Ahafo Region">Brong Ahafo Region</option>
+                </select>
+                <button id="get-weather" class="btn btn-primary">Get Weather</button>
+            </div>
+            
+            <div id="weather-results">
+                <div class="weather-card current-weather">
+                    <div class="weather-header">
+                        <h2 id="current-location">Select a location</h2>
+                        <div class="date" id="current-date"></div>
+                    </div>
+                    <div class="weather-main">
+                        <div class="weather-icon">
+                            <i class="fas fa-sun" id="current-icon"></i>
+                        </div>
+                        <div class="weather-temp">
+                            <span id="current-temp">--</span>
+                            <span class="temp-unit">°C</span>
+                        </div>
+                        <div class="weather-desc" id="current-desc">Select a location to see weather</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span id="wind">-- km/h</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span id="rain">-- mm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast-container">
+                    <h3>7-Day Forecast</h3>
+                    <div class="forecast-grid" id="forecast-grid">
+                        <!-- Forecast items will be added here -->
+                    </div>
+                </div>
+                
+                <div class="recommendations" id="recommendations">
+                    <h3>Farming Recommendations</h3>
+                    <div class="recommendation-list">
+                        <p>Select a location to get personalized farming recommendations based on weather conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>

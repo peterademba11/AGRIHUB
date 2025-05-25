@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AgriHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="agri.html">Home</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter Ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>Dashboard</span>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #e3f2fd;">
+                        <i class="fas fa-shopping-basket" style="color: #2196f3;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Active Listings</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #e8f5e9;">
+                        <i class="fas fa-money-bill-wave" style="color: #4caf50;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">₵185,000</div>
+                        <div class="stat-label">This Month's Sales</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #fff8e1;">
+                        <i class="fas fa-tractor" style="color: #ffa000;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Machinery Rentals</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background-color: #f3e5f5;">
+                        <i class="fas fa-headset" style="color: #9c27b0;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-value">2/5</div>
+                        <div class="stat-label">Expert Consultations</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Row -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Sales Overview</h3>
+                            <select class="chart-period">
+                                <option>Last 7 Days</option>
+                                <option selected>Last 30 Days</option>
+                                <option>Last 90 Days</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="salesChart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Top Products</h3>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="productsChart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Activity</h3>
+                    <a href="activity.html" class="btn btn-outline btn-sm">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle success"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">Your maize order was completed successfully</div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">2 hours ago</span>
+                                    <span class="activity-amount">₵45,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-tractor warning"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">Tractor rental confirmed for Friday</div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">Yesterday</span>
+                                    <span class="activity-amount">₵15,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-comment-alt info"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">New message from buyer about your rice listing</div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">2 days ago</span>
+                                    <a href="messages.html" class="activity-link">Reply</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-exclamation-triangle danger"></i>
+                            </div>
+                            <div class="activity-content">
+                                <div class="activity-message">Crop scan detected potential disease in your cassava</div>
+                                <div class="activity-meta">
+                                    <span class="activity-time">3 days ago</span>
+                                    <a href="crop-scanner.html" class="activity-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="quick-action">
+                        <i class="fas fa-plus"></i>
+                        <h4>Add New Product</h4>
+                        <p>List your farm produce for sale on the marketplace</p>
+                        <a href="add-product.html" class="btn btn-outline">Add Product</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="quick-action">
+                        <i class="fas fa-camera"></i>
+                        <h4>Scan Your Crops</h4>
+                        <p>Check for diseases and get treatment recommendations</p>
+                        <a href="crop-scanner.html" class="btn btn-outline">Scan Now</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="quick-action">
+                        <i class="fas fa-cloud-sun"></i>
+                        <h4>Check Weather</h4>
+                        <p>Get farming recommendations based on weather forecast</p>
+                        <a href="weather.html" class="btn btn-outline">View Forecast</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

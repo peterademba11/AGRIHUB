@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="agri.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <a href="payments.html">Payment</a>
+                <a href="subscriptions.html">upgrade</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
+        <h1>Payments</h1>
+        <p>Secure and convenient payment options for all your agricultural transactions</p>
+        
+        <div class="payment-tabs">
+            <button class="tab-btn active" data-tab="make-payment">Make Payment</button>
+            <button class="tab-btn" data-tab="payment-history">Payment History</button>
+            <button class="tab-btn" data-tab="payment-methods">Payment Methods</button>
+        </div>
+        
+        <div class="tab-content active" id="make-payment">
+            <div class="payment-form">
+                <h3>Payment Details</h3>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="payment-amount">Amount (₵)</label>
+                        <input type="number" id="payment-amount" placeholder="Enter amount" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment-reason">Payment For</label>
+                        <select id="payment-reason" required>
+                            <option value="">Select payment reason</option>
+                            <option value="marketplace">Marketplace Purchase</option>
+                            <option value="machinery">Machinery Rental</option>
+                            <option value="subscription">Subscription</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment-reference">Reference (Optional)</label>
+                        <input type="text" id="payment-reference" placeholder="e.g. Order #12345">
+                    </div>
+                    
+                    <div class="payment-method-selector">
+                        <h4>Select Payment Method</h4>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" name="payment-method" id="card-payment" value="card" checked>
+                                <label for="card-payment">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    Credit/Debit Card
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" name="payment-method" id="bank-payment" value="bank">
+                                <label for="bank-payment">
+                                    <i class="fas fa-university"></i>
+                                    Bank Transfer
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" name="payment-method" id="mobile-payment" value="mobile">
+                                <label for="mobile-payment">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    Mobile Money
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-details" id="card-details">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Expiry Date</label>
+                                <input type="text" id="card-expiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" placeholder="Peter Ademba">
+                        </div>
+                    </div>
+                    
+                    <div class="bank-details" id="bank-details" style="display: none;">
+                        <div class="bank-info">
+                            <p>Please transfer to:</p>
+                            <div class="bank-account">
+                                <div class="detail">
+                                    <span class="label">Bank Name:</span>
+                                    <span class="value">AgriHub Bank</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="label">Account Number:</span>
+                                    <span class="value">1234567890</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="label">Account Name:</span>
+                                    <span class="value">AgriHub Limited</span>
+                                </div>
+                            </div>
+                            <p class="note">Use your reference number as the payment description</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-details" id="mobile-details" style="display: none;">
+                        <div class="form-group">
+                            <label for="mobile-provider">Mobile Provider</label>
+                            <select id="mobile-provider">
+                                <option value="">Select provider</option>
+                                <option value="mtn">MTN Mobile Money</option>
+                                <option value="airtel">AirteTigo Money</option>
+                                <option value="glo">Telecel Money</option>
+                                <option value="9mobile">9mobile Payment</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mobile-number">Mobile Number</label>
+                            <input type="text" id="mobile-number" placeholder="0246121169">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="pay-now">
+                        <i class="fas fa-lock"></i> Pay Now
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="payment-history">
+            <div class="payment-history">
+                <div class="empty-state">
+                    <i class="fas fa-receipt"></i>
+                    <h3>No Payment History</h3>
+                    <p>You haven't made any payments yet. All your transactions will appear here.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="payment-methods">
+            <div class="saved-methods">
+                <h3>Saved Payment Methods</h3>
+                <div class="empty-state">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>No Saved Methods</h3>
+                    <p>You haven't saved any payment methods yet. Add a payment method to make checkout faster.</p>
+                    <button class="btn btn-primary" data-tab="make-payment">Add Payment Method</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/payments.js"></script>
+</body>
+</html>

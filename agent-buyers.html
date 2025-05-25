@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Buyers | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="agent-dashboard.html" class="logo">AgriHub <span class="badge badge-agent">Agent</span></a>
+            <div class="nav-links">
+                <a href="agent-marketplace.html">Marketplace</a>
+                <a href="agent-farmers.html">Farmers</a>
+                <a href="agent-buyers.html" class="active">Buyers</a>
+                <a href="agent-commissions.html">Commissions</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/user.png" alt="Agent" class="user-avatar">
+                        <span class="user-name">Agent Kwame</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="agent-profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="agent-settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/user.png" alt="Agent" class="user-avatar">
+                <div>
+                    <div class="user-name">Agent Kwame</div>
+                    <div class="user-role">Certified Agent</div>
+                    <div class="agent-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="agent-dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="agent-transactions.html">
+                <i class="fas fa-exchange-alt"></i> Transactions
+                <span class="badge">12</span>
+            </a>
+            <a href="agent-farmers.html">
+                <i class="fas fa-users"></i> My Farmers
+                <span class="badge">24</span>
+            </a>
+            <a href="agent-buyers.html" class="active">
+                <i class="fas fa-user-tie"></i> My Buyers
+            </a>
+            <a href="agent-listings.html">
+                <i class="fas fa-list"></i> My Listings
+            </a>
+            <a href="agent-commissions.html">
+                <i class="fas fa-money-bill-wave"></i> Commissions
+                <span class="badge">₵2,450</span>
+            </a>
+            <a href="agent-messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="agent-reports.html">
+                <i class="fas fa-chart-pie"></i> Reports
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="agent-performance">
+                <div class="performance-metric">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Success Rate</div>
+                </div>
+                <a href="agent-performance.html" class="btn btn-outline btn-sm">View Stats</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Buyers</h1>
+                <div class="breadcrumb">
+                    <a href="agent-dashboard.html">Home</a> / <span>My Buyers</span>
+                </div>
+                <div class="header-actions">
+                    <a href="agent-add-buyer.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Add Buyer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Buyer Search and Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="search-bar">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search buyers by name, company, or product...">
+                                <button class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="filter-group">
+                                <label>Filter by:</label>
+                                <select>
+                                    <option>All Buyers</option>
+                                    <option>Active</option>
+                                    <option>Corporate</option>
+                                    <option>Individual</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buyers List -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registered Buyers (15)</h3>
+                    <div class="card-actions">
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Buyer</th>
+                                    <th>Type</th>
+                                    <th>Location</th>
+                                    <th>Products Needed</th>
+                                    <th>Transactions</th>
+                                    <th>Last Activity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/user.png" alt="Buyer" class="user-avatar">
+                                            <div>
+                                                <strong>Ghana Foods Ltd</strong>
+                                                <small>+233 30 123 4567</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-primary">Corporate</span></td>
+                                    <td>Accra, Greater Accra</td>
+                                    <td>Maize, Rice, Soybeans</td>
+                                    <td>4 (₵18,200)</td>
+                                    <td>3 days ago</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline btn-sm dropdown-toggle">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#"><i class="fas fa-eye"></i> View</a>
+                                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="#"><i class="fas fa-exchange-alt"></i> New Transaction</a>
+                                                <a href="#"><i class="fas fa-phone"></i> Call</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/user.png" alt="Buyer" class="user-avatar">
+                                            <div>
+                                                <strong>Kumasi Market</strong>
+                                                <small>+233 24 987 6543</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-info">Market</span></td>
+                                    <td>Kumasi, Ashanti</td>
+                                    <td>Tomatoes, Peppers, Onions</td>
+                                    <td>3 (₵7,500)</td>
+                                    <td>1 week ago</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline btn-sm dropdown-toggle">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#"><i class="fas fa-eye"></i> View</a>
+                                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="#"><i class="fas fa-exchange-alt"></i> New Transaction</a>
+                                                <a href="#"><i class="fas fa-phone"></i> Call</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/man.png" alt="Buyer" class="user-avatar">
+                                            <div>
+                                                <strong>Accra Fresh</strong>
+                                                <small>+233 20 345 6789</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-primary">Corporate</span></td>
+                                    <td>Tema, Greater Accra</td>
+                                    <td>Cassava, Yam, Plantain</td>
+                                    <td>2 (₵5,300)</td>
+                                    <td>2 weeks ago</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline btn-sm dropdown-toggle">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#"><i class="fas fa-eye"></i> View</a>
+                                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="#"><i class="fas fa-exchange-alt"></i> New Transaction</a>
+                                                <a href="#"><i class="fas fa-phone"></i> Call</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="images/profile.png" alt="Buyer" class="user-avatar">
+                                            <div>
+                                                <strong>Nana Kwame</strong>
+                                                <small>+233 55 123 4567</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-secondary">Individual</span></td>
+                                    <td>Takoradi, Western</td>
+                                    <td>Maize, Beans</td>
+                                    <td>1 (₵2,100)</td>
+                                    <td>1 month ago</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline btn-sm dropdown-toggle">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a href="#"><i class="fas fa-eye"></i> View</a>
+                                                <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="#"><i class="fas fa-exchange-alt"></i> New Transaction</a>
+                                                <a href="#"><i class="fas fa-phone"></i> Call</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled>
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <div class="page-numbers">
+                            <span class="active">1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                        </div>
+                        <button class="btn btn-outline">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buyer Stats -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #e3f2fd;">
+                            <i class="fas fa-user-tie" style="color: #2196f3;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">15</div>
+                            <div class="stat-label">Total Buyers</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 3 new this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #e8f5e9;">
+                            <i class="fas fa-building" style="color: #4caf50;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">8</div>
+                            <div class="stat-label">Corporate Buyers</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 2 from last month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: #fff8e1;">
+                            <i class="fas fa-money-bill-wave" style="color: #ffa000;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">₵33,100</div>
+                            <div class="stat-label">Total Volume</div>
+                            <div class="stat-change up">
+                                <i class="fas fa-arrow-up"></i> 12% from last month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Agri-Hub</h3>
+                    <p>Connecting farmers to markets through trusted agents.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Agent Resources</h3>
+                    <ul>
+                        <li><a href="agent-guide.html">Agent Guide</a></li>
+                        <li><a href="agent-training.html">Training Materials</a></li>
+                        <li><a href="agent-tools.html">Tools & Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Agent Support</a></li>
+                        <li><a href="#">Contact Supervisor</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i> Agent Group</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Agent Newsletter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Agri-Hub Agent Network. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

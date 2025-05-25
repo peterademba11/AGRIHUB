@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Agri-Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Agri</span>Hub</a>
+            <div class="nav-links">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="crop-scanner.html">Crop Scanner</a>
+                <a href="weather.html">Weather</a>
+                <a href="experts.html">Experts</a>
+                <a href="machinery.html">Machinery</a>
+                <div class="user-menu">
+                    <button class="user-btn" id="user-btn">
+                        <img src="images/peter.png" alt="User" class="user-avatar">
+                        <span class="user-name">Peter Ademba</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="settings.html" class="active"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="images/peter.png" alt="User" class="user-avatar">
+                <div>
+                    <div class="user-name">Peter Ademba</div>
+                    <div class="user-role">Farmer</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="my-farm.html">
+                <i class="fas fa-tractor"></i> My Farm
+            </a>
+            <a href="my-products.html">
+                <i class="fas fa-shopping-basket"></i> My Products
+            </a>
+            <a href="orders.html">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="analytics.html">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+            <a href="messages.html">
+                <i class="fas fa-envelope"></i> Messages
+                <span class="badge">5</span>
+            </a>
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i> Notifications
+                <span class="badge">3</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="subscription-status">
+                <i class="fas fa-crown"></i> Premium Plan
+                <span>Expires in 15 days</span>
+            </div>
+            <a href="subscriptions.html" class="btn btn-primary btn-sm">Upgrade</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Settings</h1>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Home</a> / <span>Settings</span>
+                </div>
+            </div>
+            
+            <div class="settings-tabs">
+                <button class="tab-btn active" data-tab="account">Account</button>
+                <button class="tab-btn" data-tab="security">Security</button>
+                <button class="tab-btn" data-tab="notifications">Notifications</button>
+                <button class="tab-btn" data-tab="privacy">Privacy</button>
+            </div>
+            
+            <div class="tab-content active" id="account-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Account Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select class="form-control">
+                                    <option>English</option>
+                                    <option>French</option>
+                                    <option>Spanish</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <select class="form-control">
+                                    <option>(GMT+00:00) Greenwich Mean Time</option>
+                                    <option selected>(GMT+00:00) Ghana Mean Time</option>
+                                    <option>(GMT+01:00) Central European Time</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Date Format</label>
+                                <select class="form-control">
+                                    <option>DD/MM/YYYY</option>
+                                    <option selected>MM/DD/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Currency</label>
+                                <select class="form-control">
+                                    <option selected>Ghana Cedi (₵)</option>
+                                    <option>US Dollar ($)</option>
+                                    <option>Euro (€)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="security-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Security Settings</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Change Password</label>
+                                <input type="password" class="form-control" placeholder="Current Password">
+                                <input type="password" class="form-control" placeholder="New Password">
+                                <input type="password" class="form-control" placeholder="Confirm New Password">
+                                <p class="form-hint">Password must be at least 8 characters long</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Two-Factor Authentication</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="two-factor" checked>
+                                    <label for="two-factor">Enabled</label>
+                                </div>
+                                <p class="form-hint">Add an extra layer of security to your account</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Active Sessions</label>
+                                <div class="sessions-list">
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-desktop"></i>
+                                            <div>
+                                                <h4>Chrome on Windows</h4>
+                                                <p>Kumasi, Ghana • Last active: 10 minutes ago</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline btn-sm">Revoke</button>
+                                    </div>
+                                    
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <div>
+                                                <h4>Safari on iPhone</h4>
+                                                <p>Accra, Ghana • Last active: 2 days ago</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-outline btn-sm">Revoke</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="notifications-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Notification Preferences</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Notification Methods</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Email Notifications</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Push Notifications</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span>SMS Alerts</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Notification Types</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Order Updates</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Messages</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Crop Alerts</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span>Promotions</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Security Alerts</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Notification Frequency</label>
+                                <select class="form-control">
+                                    <option>Immediately</option>
+                                    <option selected>Daily Summary</option>
+                                    <option>Weekly Summary</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="privacy-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Privacy Settings</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Profile Visibility</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="visibility" checked>
+                                        <span>Public (Visible to everyone)</span>
+                                    </label>
+                                </div>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="visibility">
+                                        <span>Private (Visible only to verified buyers)</span>
+                                    </label>
+                                </div>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="visibility">
+                                        <span>Hidden (Visible only to you)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Data Sharing</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" checked>
+                                        <span>Allow anonymous usage data collection</span>
+                                    </label>
+                                    <p class="form-hint">Helps us improve our services</p>
+                                </div>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span>Share my products with partner marketplaces</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Account Deletion</label>
+                                <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+                                <button type="button" class="btn btn-danger" id="delete-account">Delete Account</button>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AgriHub</h3>
+                    <p>Connecting farmers to markets and agricultural knowledge.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="crop-scanner.html">Crop Scanner</a></li>
+                        <li><a href="weather.html">Weather Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Enactus CKTUTAS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
