@@ -6,6 +6,9 @@
     <title>AgriHub | Connecting Farmers to Markets</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <favicon.ico" type="images/man1.png">
 </head>
 <body>
     <!-- Navigation -->
@@ -14,7 +17,7 @@
             <a href="index.html" class="logo"><span>Agri</span>Hub</a>
             <div class="nav-links">
                 <a href="dashboard.html">Dashboard</a>
-                <a href="index.html">Home</a>
+                <a href="agri.html">Home</a>
                 <a href="marketplace.html">Marketplace</a>
                 <a href="crop-scanner.html">CropScanner</a>
                 <a href="weather.html">Weather</a>
@@ -33,11 +36,12 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Connecting Farmers to Markets and Knowledge</h1>
-            <p>Agri-Hub: Your complete digital farming solution</p>
+            <p>AgriHub: Your complete digital farming solution</p>
             <div class="cta-buttons">
                 <a href="register.html?role=farmer" class="btn btn-primary btn-large">I'm a Farmer</a>
                 <a href="register.html?role=buyer" class="btn btn-primary btn-large">I'm a Buyer</a>
@@ -45,6 +49,122 @@
             </div>
         </div>
     </section>
+
+
+
+     <!-----impact section---------------->
+
+    <section id="portfolio" class="portfolio">
+        <div class="main-text">
+            <h2>Our Impact</h2>
+            <p>Current impact figures</p>
+        </div>
+        <div class="container">
+            <div class="fillter-buttons">
+                <button class="btn" data-filter="all">All</button>
+                <button class="btn" data-filter=".product">People</button>
+                <button class="btn" data-filter=".inter">Planet</button>
+                <button class="btn" data-filter=".web">Prosperity</button>
+            </div>
+            <div class="portfolio-gallery">
+                <div class="port-box mix all product">
+                    <div class="port-image">
+                        <img src="images/people1.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Food Security</h3>
+                        <p>We strengthen food systems by helping farmers increase crop yields and reduce post-harvest losses, ensuring more consistent access to food.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+
+                <div class="port-box mix all product">
+                    <div class="port-image">
+                        <img src="images/people2.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Youth Employment</h3>
+                        <p>We create job opportunities for rural youth by training and deploying them as AgriHub Agents, building local capacity and leadership.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+
+                <div class="port-box mix product">
+                    <div class="port-image">
+                        <img src="images/people3.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Inclusive and Empowering</h3>
+                        <p>Our initiatives focus on creating opportunities for women, youth, and persons with disabilities, fostering equity and growth for all.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+
+                <div class="port-box mix inter">
+                    <div class="port-image">
+                        <img src="images/planet1.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Climate Action</h3>
+                        <p>We empower communities to address climate change through sustainable practices, resilience training, and climate-smart farming. We help them adapt and thrive in changing climates.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                <div class="port-box mix inter">
+                    <div class="port-image">
+                        <img src="images/planet2.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Environmental Conservation</h3>
+                        <p>Protecting natural ecosystems is central to our work. We work to protect and restore natural ecosystems through reforestation, biodiversity projects, and land rehabilitation.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                <div class="port-box mix inter">
+                    <div class="port-image">
+                        <img src="images/planet3.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Lower Carbon Footprint</h3>
+                        <p>We reduce greenhouse gas emissions by offering cleaner fuel alternatives and preventing harmful plastic burning. We close the loop by reintroducing waste into the economy, conserving raw materials, and minimizing resource extraction.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                <div class="port-box mix web">
+                    <div class="port-image">
+                        <img src="images/properity1.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Rural Economic Growth</h3>
+                        <p>We stimulate local economies by creating a digital ecosystem where input dealers, consultants, and farmers transact efficiently.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                <div class="port-box mix web">
+                    <div class="port-image">
+                        <img src="images/prosperity3.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Scalable Revenue Model</h3>
+                        <p>We sustain growth through diversified revenue streams—transaction fees, subscriptions, and premium services. We inspire sustainable business ventures by turning an environmental crisis into a profitable enterprise.</p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                <div class="port-box mix web">
+                    <div class="port-image">
+                        <img src="images/prosperity2.jpg" alt="">
+                    </div>
+                    <div class="port-content">
+                        <h3>Increased Farmer Income</h3>
+                        <p>We help farmers earn more by giving them direct access to buyers and fairer market prices for their produce. We generate consistent income through their sales </p>
+                        <a href="#" class='btn btn-top'>Read More</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
 
     <!-- Features Section -->
     <section class="features">
@@ -107,67 +227,7 @@
         </div>
     </section>
 
-    <!-----Portfolio section-----------------
-
-    <section id="portfolio" class="portfolio">
-        <div class="main-text">
-            <span>My Work</span>
-            <h2>Latest Projects</h2>
-        </div>
-        <div class="container">
-            <div class="fillter-buttons">
-                <button class="btn" data-filter="all">All</button>
-                <button class="btn" data-filter=".product">Product</button>
-                <button class="btn" data-filter=".inter">Interacting</button>
-                <button class="btn" data-filter=".web">Web App</button>
-            </div>
-            <div class="portfolio-gallery">
-                <div class="port-box mix all product">
-                    <div class="port-image">
-                        <img src="images/img/boycode.jpg" alt="">
-                    </div>
-                    <div class="port-content">
-                        <h3>Programming</h3>
-                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="port-box mix all product">
-                    <div class="port-image">
-                        <img src="images/img/handcode.jpg" alt="">
-                    </div>
-                    <div class="port-content">
-                        <h3>Programming</h3>
-                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="port-box mix inter">
-                    <div class="port-image">
-                        <img src="images/img/lapee.jpg" alt="">
-                    </div>
-                    <div class="port-content">
-                        <h3>Programming</h3>
-                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="port-box mix web">
-                    <div class="port-image">
-                        <img src="images/img/repair.jpg" alt="">
-                    </div>
-                    <div class="port-content">
-                        <h3>Programming</h3>
-                        <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task.</p>
-                        <a href="#"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-------->
+    
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -189,6 +249,41 @@
             </div>
         </div>
     </section>
+
+    <!----------Email Section-->
+    <main class="main-body">
+        <section class="form-section">
+            <h1>Have questions or want to make a difference?</h1>
+            <p>We'd love to hear from you! Whether you’re interested in our programs, want to support our mission, or are looking for ways to get involved...</p>
+            
+            <form id="contact-form">
+                <div class="row">
+                    <input type="text" name="from_name" placeholder="Name*" required />
+                    <input type="email" name="reply_to" placeholder="Email*" required />
+                </div>
+                <div class="row">
+                    <input type="tel" name="phone" placeholder="Phone Number*" required />
+                    <select name="subject">
+                    <option value="Support">You need support?</option>
+                    <option value="Inquiry">General Inquiry</option>
+                    <option value="Volunteer">Want to Volunteer</option>
+                    </select>
+                </div>
+                <textarea name="message" placeholder="Message..." required></textarea>
+            
+                <label class="checkbox-container">
+                    <input type="checkbox" required />
+                    <span>Agree to our terms and conditions</span>
+                </label>
+            
+                <button type="submit">Send Message ➤</button>
+            </form>
+        </section>
+
+    </main>
+    
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -233,5 +328,9 @@
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/mixitup.min.js"></script>
+    <script src="js/slideshow.js"></script>
+    <script src="js/email.js"></script>
+   
+    
 </body>
 </html>
