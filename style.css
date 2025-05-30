@@ -10,12 +10,6 @@
     --info-color: #2196F3;
     --text-color: #000;
     --hover-color: #2E7D32;
-    --bg-color:#261447;
-    --second-bg-color:#292e33;
-    --big-font:2.5rem;
-    --norma-font:2rem;
-    --neon-box-shadow:0 0 .5rem #12f7ff;
-    --h2-font:3rem;
 
 }
 
@@ -23,6 +17,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
 }
 
 body {
@@ -224,6 +221,11 @@ span{
     color: var(--dark-color);
 }
 
+
+* {box-sizing:border-box}
+
+
+
 /* Hero Section */
 .hero {
     background: url(images/backg.jpg);
@@ -344,10 +346,31 @@ tr:hover {
     color: var(--danger-color);
 }
 
-/*-----Portfolio Section---
+
+
+/*-----impact Section-----*/
+
+.main-text{
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+.main-text h2{
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+.main-text p{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
 .fillter-buttons{
     margin: 2rem;
     text-align: center;
+    
 }
 .fillter-buttons .btn{
     background: none;
@@ -380,7 +403,7 @@ tr:hover {
     grid-template-rows: 1fr auto;
     align-items: center;
     border: 2px solid var(--hover-color);
-    box-shadow: var(--neon-box-shadow);
+    box-shadow: var(--secondary-color);
 }
 
 .port-image{
@@ -405,18 +428,18 @@ tr:hover {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: linear-gradient(rgba(0,0,0,.2),#12f7ff);
+    background: linear-gradient(rgba(0,0,0,.2), white);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     transition: 0.5s;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .port-box:hover .port-content{
-    opacity: 1;
+    opacity: 2;
 }
 
 .port-box:hover .port-image img{
@@ -424,32 +447,34 @@ tr:hover {
     opacity: 2;
 }
 .port-content h3{
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-color);
+
 }
 
 .port-content p{
-    font-size: .8rem;
+    font-size: 1.1rem;
     margin: 5px 0 15px 0;
+    color: #000;
 }
 
 .port-content a{
     background: #ffffff;
-    border-radius: 50%;
-    display: inline-flex;
+    border-radius: 30px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 100%;
     height: 50px;
-    border: 1px solid var(--hover-color);
-    outline: 2px solid #ffffff;
+    color: var(--primary-color);
 }
 
 .port-content a i{
     font-size: 1.5rem;
     color: var(--second-bg-color);
 }
---*/
+
 
 
 /* Testimonials */
@@ -489,6 +514,103 @@ tr:hover {
     font-weight: bold;
     color: var(--primary-color);
 }
+
+@media (max-width: 768px) {
+    .testimonial-slider {
+        padding: 0 20px;
+    }
+    .fillter-buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-left: 0rem;
+    width: 100%;
+    }
+    
+}
+
+
+
+
+
+/*------Email Section-------------*/
+.main-body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #022b1d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.form-section {
+  background-color: #01371f;
+  padding: 1rem;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #114d37;
+  color: white;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+}
+.checkbox-container input{
+    padding: 0%;
+    margin: 0%;
+    width: 40px;
+    
+    border-radius: 50%;
+}
+
+button {
+  background-color: white;
+  color: #01371f;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 
 /* Footer */
 .footer {
